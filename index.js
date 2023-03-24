@@ -10,6 +10,10 @@ const UserRouter = require("./routes/UserRouter");
 const AnnounceRouter = require("./routes/AnnounceRouter");
 const NewsRouter = require("./routes/NewsRouter");
 const CommunityRouter = require("./routes/CommunityRouter");
+const InfoRouter = require("./routes/InfoRouter");
+const LogUserRouter = require("./routes/LogUserRouter");
+
+
 const path = require("path");
 
 const app = express();
@@ -56,6 +60,8 @@ app.use("/api/user", UserRouter);
 app.use("/api/announce", AnnounceRouter);
 app.use("/api/news", upload.single("file"), NewsRouter);
 app.use("/api/community", CommunityRouter);
+app.use("/api/info", InfoRouter);
+app.use("/api/loguser", LogUserRouter);
 
 app.listen(process.env.PORT, () => {
   console.log(

@@ -43,3 +43,20 @@ model Community {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+model infos {
+  id        Int      @id @default(autoincrement())
+  title     String   @default("")
+  content   String?  @db.LongText
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+
+model logusers {
+  id        Int      @id @default(autoincrement())
+  userid    String   @default("")
+  facebook  String   @default("")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
